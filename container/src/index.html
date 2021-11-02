@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Container</title>
+	<script type="module" src="container-bundle.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async e => {
+	try {		
+		window.win = nw.Window.get();
+		
+		await window.InitializeContainer();
+		console.log('Done');
+	} catch (err) {
+		console.log(err);
+	}
+});
+</script>
+</head>
+<body></body>
+</html>
