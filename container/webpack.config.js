@@ -52,9 +52,15 @@ module.exports = {
 					filename: './fonts/[name][ext]'
 				}
 			},
-			{
+			{ // node-loader creates non-relative paths, so I tried this other loader for canvas.node
 				test: /\.node$/,
-				use: 'node-loader'
+				parser: { amd: false },
+				use: {
+					loader: '@vercel/webpack-asset-relocator-loader',
+					options: {
+							emitDirnameAll: false // This does nothing... and __dirname is in the bundle
+					}
+				}
 			}
 		],
 	},
@@ -62,7 +68,9 @@ module.exports = {
 		new CopyPlugin({
 			patterns: [
 				{ from: 'src/index.html' },
-				{ from: 'src/pdf', to: 'pdf' }
+				{ from: 'src/pdf', to: 'pdf' },
+				{ from: 'node_modules/nw/nwjs' },
+				{ from: 'package.json' }
 			],
 		}),
 		new DuplicatesPlugin({

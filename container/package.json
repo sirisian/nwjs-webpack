@@ -1,6 +1,6 @@
 {
 	"name": "container",
-	"main": "dist/index.html",
+	"main": "index.html",
 	"chromium-args": "",
 	"window": {
 		"kiosk": false,
@@ -12,8 +12,7 @@
 		"plugin": true
 	},
 	"scripts": {
-		"build": "webpack --config webpack.config.js",
-		"start": "nw"
+		"build": "webpack --config webpack.config.js"
 	},
 	"dependencies": {
 		"canvas": "^2.8.0",
@@ -25,11 +24,11 @@
 	"devDependencies": {
 		"@babel/core": "^7.15.8",
 		"@babel/preset-env": "^7.15.8",
+		"@vercel/webpack-asset-relocator-loader": "^1.7.0",
 		"babel-loader": "^8.2.3",
 		"copy-webpack-plugin": "^9.0.1",
 		"css-loader": "^6.5.0",
 		"inspectpack": "^4.7.1",
-		"node-loader": "^2.0.0",
 		"style-loader": "^3.3.1",
 		"terser-webpack-plugin": "^5.2.4",
 		"webpack": "^5.60.0",
