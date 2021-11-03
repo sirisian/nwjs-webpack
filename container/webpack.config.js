@@ -16,7 +16,7 @@ module.exports = {
 		__filename: true
 	},
 	output: {
-		publicPath: 'src/',
+		publicPath: '',
 		filename: '[name]-bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 	},
@@ -58,7 +58,7 @@ module.exports = {
 				use: {
 					loader: '@vercel/webpack-asset-relocator-loader',
 					options: {
-							emitDirnameAll: false // This does nothing... and __dirname is in the bundle
+						emitDirnameAll: false // This does nothing... and I get __dirname errors is in the bundle
 					}
 				}
 			}

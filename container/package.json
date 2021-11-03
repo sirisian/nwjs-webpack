@@ -12,7 +12,7 @@
 		"plugin": true
 	},
 	"scripts": {
-		"build": "webpack --config webpack.config.js"
+		"build": "webpack --mode=development --config webpack.config.js"
 	},
 	"dependencies": {
 		"canvas": "^2.8.0",
