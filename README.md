@@ -2,12 +2,15 @@ If you are using Windows with WSL then run these first in WSL:
 
 ```
 export npm_config_nwjs_process_arch=x64;
-export NWJS_BUILD_TYPE=sdk;
 export npm_config_nwjs_platform=win32;
 ```
 
 That tells the nw package to download binaries for windows x64 SDK and not the architecture WSL is using. If you're running natively in say Ubuntu you can just run the following:
 
+```
+export NWJS_BUILD_TYPE=sdk;
+```
+and
 ```
 cd container;
 npm install
